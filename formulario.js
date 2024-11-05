@@ -1,8 +1,8 @@
-var formulario = document.querySelector("#form")
+var formulario = document.querySelector("#form") //No estaba apuntando en ningún lado
 
 formulario.onsubmit = function(e) {
 
-  e.prevent();
+  e.preventDefault();
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -32,7 +32,7 @@ if (nombre.length > 0
 
 var botonBorrar = document.createElement("button")
 botonBorrar.textContent = "Eliminar invitado"
-botonBorrar.id = "boton-borrar"
+botonBorrar.id = "boton-borrar" //No está apuntando a nada
 var corteLinea = document.createElement("br")
 document.body.appendChild(corteLinea)
 document.body.appendChild(botonBorrar);
@@ -52,10 +52,10 @@ function agregarInvitado(nombre, edad, nacionalidad) {
     nacionalidad = "Peruana"
   }
 
-var lista = document.getElementById("lista-de-invitados")
+var lista = document.getElementById("lista-de-invitados") //Esto no apunta a nada
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+elementoLista.classList.add("elemento-lista") //No es added, es add
 lista.appendChild(elementoLista)
 
 var spanNombre = document.createElement("span")
@@ -91,7 +91,7 @@ elementoLista.appendChild(corteLinea)
 elementoLista.appendChild(botonBorrar);
 
  botonBorrar.onclick = function() {
-// this.parentNode.style.display = 'none';
+this.parentNode.style.display = 'none';
 botonBorrar.parentNode.remove()
   }
 }
